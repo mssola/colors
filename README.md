@@ -42,7 +42,7 @@ func (c *Color) SetMode(m Mode)
 func (c *Color) Get(s string) string
 ```
 
-For an extended documentation take a look at [this](http://godoc.org/github.com/mssola/colors).
+For more information check out the [documentation](http://godoc.org/github.com/mssola/colors).
 
 ## tl;dr
 
@@ -63,9 +63,9 @@ func main() {
     // c := colors.Default() is equivalent to:
     //
     // c := &colors.Color{
-    //    Foreground: Saved,
-    //    Background: Saved,
-    //    Mode: Regular,
+    //    Foreground: colors.Saved,
+    //    Background: colors.Saved,
+    //    Mode: colors.Regular,
     // }
     //
     // You might want to initialize the struct directly if you just want to
