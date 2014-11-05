@@ -36,7 +36,7 @@ the following methods:
 func (c *Color) Change(color Colors, bg bool)
 
 // Changes the mode for the given one.
-func (c *Color) SetMode(m Mode),
+func (c *Color) SetMode(m Mode)
 
 // Returns the given string but with the color & mode applied.
 func (c *Color) Get(s string) string
@@ -50,36 +50,36 @@ For an extended documentation take a look at [this](http://godoc.org/github.com/
 package main
 
 import (
-	"fmt"
+    "fmt"
 
-	"github.com/mssola/colors"
+    "github.com/mssola/colors"
 )
 
 func main() {
-  // By default it respects the current terminal schema.
-	c := colors.Default()
-	fmt.Printf(c.Get("Nothing\n"))
+    // By default it respects the current terminal schema.
+    c := colors.Default()
+    fmt.Printf(c.Get("Nothing\n"))
 
-  // c := colors.Default() is equivalent to:
-  //
-  // c := &colors.Color{
-  //    Foreground: Saved,
-  //    Background: Saved,
-  //    Mode: Regular,
-  // }
-  //
-  // You might want to initialize the struct directly if you just want to
-  // print a colorful message and get out.
+    // c := colors.Default() is equivalent to:
+    //
+    // c := &colors.Color{
+    //    Foreground: Saved,
+    //    Background: Saved,
+    //    Mode: Regular,
+    // }
+    //
+    // You might want to initialize the struct directly if you just want to
+    // print a colorful message and get out.
 
-  // Let's print a red bold message.
-	c.Change(colors.Red, false)
-	c.SetMode(colors.Bold)
-	fmt.Printf(c.Get("Red\n"))
+    // Let's print a red bold message.
+    c.Change(colors.Red, false)
+    c.SetMode(colors.Bold)
+    fmt.Printf(c.Get("Red\n"))
 
-  // It will print the same as before but reversed: the background is now red
-  // and the foreground white.
-	c.SetMode(colors.Reversed)
-	fmt.Printf(c.Get("Reversed Red\n"))
+    // It will print the same as before but reversed: the background is now red
+    // and the foreground white.
+    c.SetMode(colors.Reversed)
+    fmt.Printf(c.Get("Reversed Red\n"))
 }
 ```
 
